@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Main;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::group(['namespace' => 'Main'], function () {
+    Route::get('/', 'IndexController');
+    Route::get('/{id}', 'SortController')->name('main.category.sort');
 });
