@@ -17,25 +17,28 @@ class CategorySeeder extends Seeder
     {
         $categories = [
             [
-               'name'=>'Все'
+                'name'=>'Доски и лыжи',
+                'style_name'=>'boards'
             ],
             [
-                'name'=>'Доски и лыжи'
+                'name'=>'Крепления',
+                'style_name'=>'attachment'
             ],
             [
-                'name'=>'Крепления'
+                'name'=>'Ботинки',
+                'style_name'=>'boots'
             ],
             [
-                'name'=>'Ботинки'
+                'name'=>'Одежда',
+                'style_name'=>'clothing'
             ],
             [
-                'name'=>'Одежда'
+                'name'=>'Инструменты',
+                'style_name'=>'tools'
             ],
             [
-                'name'=>'Инструменты'
-            ],
-            [
-                'name'=>'Разное'
+                'name'=>'Разное',
+                'style_name'=>'other'
             ],
             ];
         DB::table('categories')->insert($categories);

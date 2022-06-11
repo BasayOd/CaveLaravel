@@ -37,9 +37,11 @@
             </nav>
         </div>
     </header>
-    <main class="container">
-        @yield('categories_main')
-        @yield('content')
+    <main>
+        @yield('categories')
+        <div class="container">
+            @yield('content')
+        </div>
     </main>
 </div>
 

@@ -15,6 +15,6 @@ use App\Http\Controllers\Main;
 */
 
 Route::group(['namespace' => 'Main'], function () {
-    Route::get('/', 'IndexController');
-    Route::get('/{id}', 'SortController')->name('main.category.sort');
+    Route::get('/', 'IndexController')->name('main');
+    Route::get('/{selected}', 'IndexController@sort')->name('main.category.sort');
 });

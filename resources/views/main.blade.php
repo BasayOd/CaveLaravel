@@ -1,9 +1,15 @@
 @extends('layouts.main')
 
+@section('categories_main')
+        @include('inc.categoryWithPic')
+@endsection
+
 @section('content')
     <div class="container">
         <section class="lots">
-            <h2>Все лоты в категории <span>«Доски и лыжи»</span></h2>
+            <div class="lots__header">
+                <h2>Открытые лоты</h2>
+            </div>
             <ul class="lots__list">
                 <li class="lots__item lot">
                     <div class="lot__image">
@@ -149,13 +155,5 @@
 @endsection
 
 @section('categories')
-    <nav class="nav">
-        <ul class="nav__list container">
-            @foreach($categories as $category)
-            <li class="nav__item {{(isset($id)&&$id==$category->id||!isset($id)&&$category->id==1)?'nav__item--current':''}}">
-                <a href="{{route('main.category.sort', $category->id)}}">{{$category->name}}</a>
-            </li>
-            @endforeach
-        </ul>
-    </nav>
+    @include('inc.categoryList')
 @endsection
