@@ -19,7 +19,6 @@ class UserSeeder extends Seeder
               'name'=>'Игорь',
               'email'=>'basay1980@gmail.com',
               'password'=>'123',
-              'avatar'=>'/img/avatar.jpg',
               'contact'=>'Червоный хутор'
 
           ],
@@ -27,7 +26,6 @@ class UserSeeder extends Seeder
                 'name'=>'Вася',
                 'email'=>'basay1981@gmail.com',
                 'password'=>'123',
-                'avatar'=>'/img/avatar.jpg',
                 'contact'=>'Княжеская'
 
             ],
@@ -35,7 +33,6 @@ class UserSeeder extends Seeder
                 'name'=>'Денис',
                 'email'=>'basay1982@gmail.com',
                 'password'=>'123',
-                'avatar'=>'/img/avatar.jpg',
                 'contact'=>'Базарная'
 
             ],
@@ -43,7 +40,6 @@ class UserSeeder extends Seeder
                 'name'=>'Паша',
                 'email'=>'basay1983@gmail.com',
                 'password'=>'123',
-                'avatar'=>'/img/avatar.jpg',
                 'contact'=>'Аркадия'
 
             ],
@@ -51,7 +47,6 @@ class UserSeeder extends Seeder
                 'name'=>'Коля',
                 'email'=>'basay1984@gmail.com',
                 'password'=>'123',
-                'avatar'=>'/img/avatar.jpg',
                 'contact'=>'Котовского'
 
             ],
