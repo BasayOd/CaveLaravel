@@ -22,14 +22,22 @@
             </form>
             <a class="main-header__add-lot button" href="add-lot.html">Добавить лот</a>
             <nav class="user-menu">
-                <ul class="user-menu__list">
-                    <li class="user-menu__item">
-                        <a href="{{route('user.register')}}">Регистрация</a>
-                    </li>
-                    <li class="user-menu__item">
-                        <a href="{{route('user.login')}}">Вход</a>
-                    </li>
-                </ul>
+                @guest()
+                    <ul class="user-menu__list">
+                        <li class="user-menu__item">
+                            <a href="{{route('user.register')}}">Регистрация</a>
+                        </li>
+                        <li class="user-menu__item">
+                            <a href="{{route('user.login')}}">Вход</a>
+                        </li>
+                    </ul>
+                @endguest
+                @auth()
+                    <div class="user-menu__logged">
+                        <p>Константин</p>
+                        <a href="{{route('user.logout')}}">Выйти</a>
+                    </div>
+                @endauth
                 {{--<div class="user-menu__logged">
                     <p>Константин</p>
                     <a href="login.html">Выйти</a>

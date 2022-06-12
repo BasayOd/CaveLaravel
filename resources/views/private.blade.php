@@ -6,7 +6,5 @@
 
 @endsection
 
-@section('categories')
-            @include('inc.categoryList')
-@endsection
+
 

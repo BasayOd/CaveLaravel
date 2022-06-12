@@ -20,7 +20,10 @@ Route::group(['namespace' => 'Main'], function () {
     Route::get('/{selected}', 'IndexController@sort')->name('main.category.sort');
 });
 Route::name('user.')->group(function (){
-    Route::view('/private','private' )->middleware('auth')->name('private');
+    Route::view('user/private','private' )->middleware('auth')->name('private');
     Route::get('user/login', 'UserController@showLogin')->name('login');
     Route::get('user/register','UserController@showRegister')->name('register');
+    Route::post('user/register','User\RegisterController@save');
+    Route::post('user/login','UserController@login');
+    Route::get('user/logout', 'UserController@logout')->name('logout');
 });

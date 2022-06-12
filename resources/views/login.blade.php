@@ -8,7 +8,7 @@
         <h2>Вход</h2>
         <div class="form__item @error('email'){{'form__item--invalid'}} @enderror"> <!-- form__item--invalid -->
             <label for="email">E-mail <sup>*</sup></label>
-            <input id="email" type="text" name="email" placeholder="Введите e-mail">
+            <input id="email" type="email" name="email" placeholder="Введите e-mail" value="{{ old('email') }}">
             <span class="form__error">Введите e-mail</span>
         </div>
         <div class="form__item form__item--last @error('password'){{'form__item--invalid'}} @enderror">
