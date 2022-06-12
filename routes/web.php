@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use \Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Main;
 
 /*
@@ -17,4 +18,9 @@ use App\Http\Controllers\Main;
 Route::group(['namespace' => 'Main'], function () {
     Route::get('/', 'IndexController')->name('main');
     Route::get('/{selected}', 'IndexController@sort')->name('main.category.sort');
+});
+Route::name('user.')->group(function (){
+    Route::view('/private','private' )->middleware('auth')->name('private');
+    Route::get('user/login', 'UserController@showLogin')->name('login');
+    Route::get('user/register','UserController@showRegister')->name('register');
 });
