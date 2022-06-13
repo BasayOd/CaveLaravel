@@ -34,8 +34,14 @@
                 @endguest
                 @auth()
                     <div class="user-menu__logged">
-                        <p>Константин</p>
-                        <a href="{{route('user.logout')}}">Выйти</a>
+                        <ul class="user-menu__list">
+                            <li class="user-menu__item">
+                                <a href="#"><p>{{Auth::user()->name}}</p></a>
+                            </li>
+                            <li class="user-menu__item">
+                                <a href="{{route('user.logout')}}">Выйти</a>
+                            </li>
+                        </ul>
                     </div>
                 @endauth
                 {{--<div class="user-menu__logged">

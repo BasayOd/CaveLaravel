@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Auth;
 
 class RegisterController extends Controller
 {
-    public function save(RegisterRequest $request){
+    public function store(RegisterRequest $request){
 
 
        $validateFields = $request->validated();
@@ -20,9 +20,17 @@ class RegisterController extends Controller
 
        if ($user) {
            auth()->login($user);
-           return redirect()->to(route('user.private'));
+           return redirect()->to(route('main'));
        }
-       return redirect()->to(route('user.register'))->withErrors(['formError'=>'mistake']);
+       return redirect()->to(route('user.register'))->withErrors(['regError'=>'mistake']);
 
+    }
+    public function show()
+    {
+
+        if(Auth::check()){
+            return redirect(route('main'));
+        }
+        return view('register');
     }
 }

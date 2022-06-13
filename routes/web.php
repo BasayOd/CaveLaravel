@@ -19,11 +19,12 @@ Route::group(['namespace' => 'Main'], function () {
     Route::get('/', 'IndexController')->name('main');
     Route::get('/{selected}', 'IndexController@sort')->name('main.category.sort');
 });
-Route::name('user.')->group(function (){
-    Route::view('user/private','private' )->middleware('auth')->name('private');
-    Route::get('user/login', 'UserController@showLogin')->name('login');
-    Route::get('user/register','UserController@showRegister')->name('register');
-    Route::post('user/register','User\RegisterController@save');
-    Route::post('user/login','UserController@login');
-    Route::get('user/logout', 'UserController@logout')->name('logout');
+Route::group(['namespace' => 'User'], function (){
+    Route::get('user/login', 'LoginController@show')->name('user.login');
+    Route::post('user/login','LoginController@login');
+
+    Route::get('user/register','RegisterController@show')->name('user.register');
+    Route::post('user/register','RegisterController@store');
+
+    Route::get('user/logout', 'LoginController@logout')->name('user.logout');
 });

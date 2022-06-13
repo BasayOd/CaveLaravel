@@ -3,7 +3,7 @@
 
 
 @section('content')
-    <form class="form container" action="{{route('user.register')}}" method="post" autocomplete="off"> <!-- form--invalid -->
+    <form class="form container @error('email'){{'form--invalid'}} @enderror" action="{{route('user.register')}}" method="post" autocomplete="off"> <!-- form--invalid -->
         @csrf
         <h2>Регистрация нового аккаунта</h2>
         <div class="form__item @error('email'){{'form__item--invalid'}} @enderror"> <!-- form__item--invalid -->
