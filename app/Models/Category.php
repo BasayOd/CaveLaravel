@@ -11,4 +11,11 @@ class Category extends Model
 
     protected $table = 'categories';
     protected $guarded = false;
+
+    public function lots()
+    {
+
+        return $this->HasMany(Lot::class);
+
+    }
 }

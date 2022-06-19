@@ -28,3 +28,4 @@ Route::group(['namespace' => 'User'], function (){
 
     Route::get('user/logout', 'LoginController@logout')->name('user.logout');
 });
+
