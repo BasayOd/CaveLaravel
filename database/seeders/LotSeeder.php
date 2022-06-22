@@ -26,7 +26,7 @@ class LotSeeder extends Seeder
                  просто посмотрите на Вашу доску и улыбнитесь, крутая графика от Шона Кливера еще никого не оставляла равнодушным.',
                 'img' => 'img/lot-1.jpg',
                 'price' => 10999,
-                'dt_end' => Carbon::now()->addWeek(),
+                'dt_end' => Carbon::now()->addDay(),
                 'bet_step' => 1000,
                 'user_id' => 2,
                 'category_id' => 1

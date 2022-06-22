@@ -727,6 +727,7 @@ main.container {
     margin-right: auto;
 }
 
+
 .pagination-item-next {
     margin-left: auto;
     margin-right: 0;
@@ -743,6 +744,11 @@ main.container {
 
 .pagination-item-active a:active {
     color: #25434e;
+}
+
+.pagination-not_active {
+    pointer-events: none;
+    cursor: default;
 }
 
 /* Форма Регистрация + Добавление лота */
@@ -1238,3 +1244,7 @@ input:invalid .form__error{
     opacity: 0.4;
 }
 
+.not_active {
+    pointer-events: none;
+    cursor: default;
+}
