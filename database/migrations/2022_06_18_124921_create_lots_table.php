@@ -19,7 +19,7 @@ class CreateLotsTable extends Migration
             $table->string('name');
             $table->text('description');
             $table->string('img');
-            $table->float('price');
+            $table->unsignedBigInteger('price');
             $table->dateTime('dt_end');
             $table->integer('bet_step');
             $table->unsignedBigInteger('user_id');

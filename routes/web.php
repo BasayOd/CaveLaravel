@@ -19,6 +19,11 @@ Route::group(['namespace' => 'Main'], function () {
     Route::get('/', 'IndexController')->name('main');
     Route::get('/{selected}', 'IndexController@sort')->name('main.category.sort');
 });
+Route::group(['namespace' => 'Lot'], function () {
+    Route::get('lot/{lot}', 'LotController@show')->name('show.lot');
+    Route::get('lot/user/create', 'LotController@create')->name('create.lot')->middleware('auth');
+    Route::post('lot/', 'LotController@store');
+});
 Route::group(['namespace' => 'User'], function (){
     Route::get('user/login', 'LoginController@show')->name('user.login');
     Route::post('user/login','LoginController@login');
@@ -28,4 +33,5 @@ Route::group(['namespace' => 'User'], function (){
 
     Route::get('user/logout', 'LoginController@logout')->name('user.logout');
 });
+
 

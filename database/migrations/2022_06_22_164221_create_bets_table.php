@@ -16,7 +16,7 @@ class CreateBetsTable extends Migration
         Schema::create('bets', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->float('price');
+            $table->unsignedBigInteger('price');
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('lot_id');
 

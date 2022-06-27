@@ -20,7 +20,7 @@
                 <input type="search" name="search" placeholder="Поиск лота">
                 <input class="main-header__search-btn" type="submit" name="find" value="Найти">
             </form>
-            <a class="main-header__add-lot button" href="{{route('create.lot')}}">Добавить лот</a>
+            <a class="main-header__add-lot button" href="add-lot.html">Добавить лот</a>
             <nav class="user-menu">
                 @guest()
                     <ul class="user-menu__list">
@@ -44,15 +44,11 @@
                         </ul>
                     </div>
                 @endauth
-                {{--<div class="user-menu__logged">
-                    <p>Константин</p>
-                    <a href="login.html">Выйти</a>
-                </div>--}}
             </nav>
         </div>
     </header>
-    <main class="container">
-        @yield('categories_main')
+    <main>
+        @yield('categories')
         @yield('content')
     </main>
 </div>
@@ -102,7 +98,7 @@
                 </svg>
             </a>
         </div>
-        <a class="main-footer__add-lot button" href="{{route('create.lot')}}">Добавить лот</a>
+        <a class="main-footer__add-lot button" href="add-lot.html">Добавить лот</a>
         <div class="main-footer__developed-by">
             <span class="visually-hidden">Разработано:</span>
             <a class="logo-academy" href="https://htmlacademy.ru/intensive/php">
